@@ -4,13 +4,17 @@ window.module = {};
 window.addEventListener("load", async (event) => {
 	window.TOML = window.module.exports;
 	let response = await fetch("config.toml");
-	if(!response.ok) {
-		document.title = `Error: ${response.status} ${response.statusText}`;
-		throw new Error(document.title);
-	}
-	
-	let config = TOML.parse(await response.text());
+	let response2 = await fetch("config.sample.toml");
+	if(response.ok) {
+		let config = TOML.parse(await response.text());
 	apply_config(config);
+	} else if (response2.ok) {
+		let config = TOML.parse(await response2.text());
+	apply_config(config);
+	} else {
+		document.title = `Error: ${response.status} ${response.statusText}`;
+                throw new Error(document.title);
+	}
 });
 
 function apply_config(config) {
