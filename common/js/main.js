@@ -7,10 +7,10 @@ window.addEventListener("load", async (event) => {
 	let response2 = await fetch("config.sample.toml");
 	if(response.ok) {
 		let config = TOML.parse(await response.text());
-	apply_config(config);
+		apply_config(config);
 	} else if (response2.ok) {
 		let config = TOML.parse(await response2.text());
-	apply_config(config);
+		apply_config(config);
 	} else {
 		document.title = `Error: ${response.status} ${response.statusText}`;
                 throw new Error(document.title);
