@@ -1,6 +1,6 @@
 # simple-dash
 
-Try the Demo here: https://zerdion.github.io/simple-dash/
+Try the Demo here: https://zeridon.github.io/simple-dash/
 
 A simple, fully responsive Dashboard to forward to the services of your choice! Ideal for Desktop and mobile usage!
 Add all of your services, whether you host them yourself or not and display them as neat Icons from the Font Awesome library.
